@@ -1,0 +1,21 @@
+{
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+    "features": {
+        "ghcr.io/devcontainers-contrib/features/zig:1": {
+            "version": "0.11.0"
+        }
+    },
+    "remoteUser": "root",
+    "postCreateCommand": "bash ./.devcontainer/postCreateCommand.sh",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ziglang.vscode-zig"
+            ],
+            "settings": {
+                "zig.zls.path": "${workspaceFolder}/.devcontainer/zls/bin/zls",
+                "zig.path": "${workspaceFolder}/.devcontainer/zig/zig"
+            }
+        }
+    }
+}
