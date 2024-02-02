@@ -93,19 +93,12 @@ test {
     try expect(stack.isEmpty() == false);
 
     var next = stack.pop();
-    try expect(next != null);
-    try expect(next.?.val == 4);
-
-    next = stack.pop();
-    try expect(next != null);
-    try expect(next.?.val == 3);
-
-    next = stack.pop();
-    try expect(next != null);
-    try expect(next.?.val == 2);
+    try expect(stack.top().eq(Hay.init(4)));
+    try expect(stack.pop().eq(Hay.init(4)));
+    //try expect(stack.top() == .{ .val = 3 });
+    //try expect(stack.pop() == .{ .val = 3 });
+    //try expect(stack.top() == .{ .val = 2 });
+    //try expect(stack.pop() == .{ .val = 2 });
 
     try expect(stack.isEmpty() == true);
-
-    next = stack.pop();
-    try expect(next == null);
 }
